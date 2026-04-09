@@ -1,8 +1,8 @@
 import React from 'react';
+import './MovieList.css';
+import MovieCard from '../MovieCard/MovieCard';
 
-const MovieList = () => {
-  const [movies, setMovies] = React.useState([]);
-
+const MovieList = ({ movies, setMovies }) => {
   const getMovies = () => {
     const url = 'https://api.themoviedb.org/3/discover/movie';
     const options = {
@@ -21,17 +21,12 @@ const MovieList = () => {
 
   React.useEffect(() => {
     getMovies();
-    console.log(movies);
   }, []);
 
   return (
-    <div>
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul>
-    </div>
+    <section className="movie-list-container">
+      <MovieCard movies={movies} />
+    </section>
   );
 };
 
