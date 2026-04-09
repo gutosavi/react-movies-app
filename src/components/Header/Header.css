@@ -1,0 +1,10 @@
+.nav-bar {
+  background-color: #222;
+  height: 75px;
+  padding: 16px 3%; 
+}
+
+h1 {
+  color: #eee;
+  font-size: 2rem;
+}
