@@ -1,26 +1,38 @@
 import React from 'react';
 
 const MovieList = () => {
+  const [movies, setMovies] = React.useState([]);
+
   const getMovies = () => {
     const url = 'https://api.themoviedb.org/3/discover/movie';
     const options = {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZjhmZGQ3NTA1NjMxYjEzNjEyNThkYWYwNDMxMjljYiIsIm5iZiI6MTc3NTc1NDk3NC42MDgsInN1YiI6IjY5ZDdkZWRlNzE2YjI5MTM3NTg3YjcyOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uF8FVwQrZURG_wNsR9i8zO-lI-AjFdmDjFVN9S6vBPc',
+        Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
       },
     };
 
     fetch(url, options)
       .then((res) => res.json())
-      .then((json) => console.log(json))
+      .then((json) => setMovies(json.results))
       .catch((err) => console.error(err));
   };
 
-  getMovies();
+  React.useEffect(() => {
+    getMovies();
+    console.log(movies);
+  }, []);
 
-  return <div>MovieList</div>;
+  return (
+    <div>
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default MovieList;
