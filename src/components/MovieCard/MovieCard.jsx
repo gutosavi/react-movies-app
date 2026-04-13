@@ -1,5 +1,6 @@
 import React from 'react';
 import './MovieCard.css';
+import MovieAverage from '../MovieAverage/MovieAverage';
 
 const MovieCard = ({ movies }) => {
   return (
@@ -16,7 +17,9 @@ const MovieCard = ({ movies }) => {
                 </div>
                 <div className="movie-info">
                   <p className="movie-title">{movie.title}</p>
-                  <p>{movie.vote_average}</p>
+                  <p>
+                    <MovieAverage rating={movie.vote_average} />
+                  </p>
                   <div className="hidden-content">
                     <p className="description">{movie.overview}</p>
                     <button className="btn-veja-mais">Veja mais</button>
