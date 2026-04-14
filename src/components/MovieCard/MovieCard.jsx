@@ -1,5 +1,6 @@
 import React from 'react';
 import './MovieCard.css';
+import { Link } from 'react-router-dom';
 import MovieAverage from '../MovieAverage/MovieAverage';
 
 const MovieCard = ({ movies }) => {
@@ -22,7 +23,9 @@ const MovieCard = ({ movies }) => {
                   </p>
                   <div className="hidden-content">
                     <p className="description">{movie.overview}</p>
-                    <button className="btn-veja-mais">Veja mais</button>
+                    <Link to={`/movie/${movie.id}`} state={{ movie: movie }}>
+                      <button className="btn-veja-mais">Veja mais</button>
+                    </Link>
                   </div>
                 </div>
               </section>
