@@ -38,7 +38,7 @@ img {
   }
   
   .movie-description {
-    margin-top: 20px;
+    margin: 20px 0;
     color: #fff;
     padding-right: 10px;
     text-align: justify;
@@ -47,16 +47,25 @@ img {
 
 
 @media screen and (max-width: 768px) {
+
+  .movie-details {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
   .info-movie {
-    grid-column: 1;
-    width: 300px;
+    grid-template-columns: 1fr;
+    max-width: 350px;
     margin: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
-    
+    justify-content: center;     
   }
 }
 

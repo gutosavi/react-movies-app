@@ -10,7 +10,7 @@ const MovieAverage = ({ rating }) => {
         return starValue <= Math.round(rating / 2) ? (
           <FaStar key={index} color="#ffc107" />
         ) : (
-          <FaRegStar key={index} />
+          <FaRegStar key={index} color="#222" />
         );
       })}
     </>
