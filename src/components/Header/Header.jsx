@@ -3,7 +3,7 @@ import './Header.css';
 import { NavLink } from 'react-router-dom';
 import Input from '../Form/Input';
 
-const Header = ({ movies }) => {
+const Header = ({ setFilter }) => {
   return (
     <header className="nav-bar">
       <h1>Movies App</h1>
@@ -22,7 +22,7 @@ const Header = ({ movies }) => {
           </ul>
         </nav>
         <div className="nav-input">
-          <Input movies={movies} />
+          <Input setFilter={setFilter} />
         </div>
       </div>
     </header>

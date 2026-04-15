@@ -2,17 +2,9 @@ import React from 'react';
 import './Input.css';
 import { CiSearch } from 'react-icons/ci';
 
-const Input = ({ movies }) => {
-  const [inputValue, setInputValue] = React.useState(null);
-  //.title
-  console.log(movies);
-
-  const filterMovie = movies.filter((movie) =>
-    movie.title.includes(inputValue),
-  );
-
+const Input = ({ setFilter }) => {
   const handleChange = (e) => {
-    setInputValue(e.target.value);
+    setFilter(e.target.value);
   };
 
   return (

@@ -7,15 +7,20 @@ import MovieDetails from './components/MovieDetails/MovieDetails';
 
 function App() {
   const [movies, setMovies] = React.useState([]);
+  const [inputValue, setInputValue] = React.useState('');
+
+  const filterMovie = movies.filter((movie) =>
+    movie.title?.toLowerCase().includes(inputValue.toLowerCase()),
+  );
 
   return (
     <>
       <BrowserRouter>
-        <Header movies={movies} />
+        <Header setFilter={setInputValue} />
         <Routes>
           <Route
             path="/"
-            element={<MovieList movies={movies} setMovies={setMovies} />}
+            element={<MovieList movies={filterMovie} setMovies={setMovies} />}
           />
           <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
