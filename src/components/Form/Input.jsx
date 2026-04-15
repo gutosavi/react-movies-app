@@ -9,7 +9,7 @@ const Input = ({ setFilter }) => {
 
   return (
     <>
-      <CiSearch style={{ color: '#ccc' }} />
+      <CiSearch style={{ color: '#ccc', fontSize: '1.5rem' }} />
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           onChange={handleChange}

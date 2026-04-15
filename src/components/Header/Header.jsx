@@ -6,7 +6,7 @@ import Input from '../Form/Input';
 const Header = ({ setFilter }) => {
   return (
     <header className="nav-bar">
-      <h1>Movies App</h1>
+      <h1>MOVIES</h1>
       <div className="nav-menu">
         <nav>
           <ul>

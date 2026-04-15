@@ -1,4 +1,4 @@
-.movie-list-container {
+.movie-list {
   display: flex;
   justify-content: start;
   align-items: start;
@@ -10,3 +10,10 @@
   overflow: hidden;
 }
 
+.movie-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 75px);
+  width: 100%;
+}
