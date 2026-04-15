@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header movies={movies} />
         <Routes>
           <Route
             path="/"

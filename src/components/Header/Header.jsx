@@ -3,7 +3,7 @@ import './Header.css';
 import { NavLink } from 'react-router-dom';
 import Input from '../Form/Input';
 
-const Header = () => {
+const Header = ({ movies }) => {
   return (
     <header className="nav-bar">
       <h1>Movies App</h1>
@@ -22,7 +22,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className="nav-input">
-          <Input />
+          <Input movies={movies} />
         </div>
       </div>
     </header>
