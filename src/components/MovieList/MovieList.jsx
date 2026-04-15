@@ -2,36 +2,25 @@ import React from 'react';
 import './MovieList.css';
 import MovieCard from '../MovieCard/MovieCard';
 import { OrbitProgress } from 'react-loading-indicators';
+import { fetchMovies } from '../../services/api';
 
 const MovieList = ({ movies, setMovies }) => {
   const [isLoading, setIsLoading] = React.useState(true);
 
-  const getMovies = () => {
-    const url = 'https://api.themoviedb.org/3/discover/movie';
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
-      },
-    };
-
-    fetch(url, options)
-      .then((res) => res.json())
-      .then((json) => {
-        setMovies(json.results);
-        // setIsLoading(false);
-      })
-      .catch((err) => console.error(err))
-      .finally(
+  React.useEffect(() => {
+    const getMovie = async () => {
+      try {
+        const data = await fetchMovies();
+        setMovies(data.results);
+      } catch (error) {
+        console.error('Erro ao carregar os filmes', error);
+      } finally {
         setTimeout(() => {
           setIsLoading(false);
-        }, 1000), // para teste
-      );
-  };
-
-  React.useEffect(() => {
-    getMovies();
+        }, 1000);
+      }
+    };
+    getMovie();
   }, []);
 
   return (
