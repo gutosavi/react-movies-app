@@ -18,7 +18,9 @@ const Input = ({ setFilter }) => {
 
   return (
     <>
-      <CiSearch style={{ color: '#ccc', fontSize: '1.5rem' }} />
+      <div className="input-icon">
+        <CiSearch style={{ color: '#ccc', fontSize: '1.3rem' }} />
+      </div>
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           ref={inputRef}

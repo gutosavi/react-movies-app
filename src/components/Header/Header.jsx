@@ -2,11 +2,14 @@ import React from 'react';
 import './Header.css';
 import { NavLink } from 'react-router-dom';
 import Input from '../Form/Input';
+import { RiMenu3Line } from 'react-icons/ri';
 
 const Header = ({ setFilter }) => {
   return (
     <header className="nav-bar">
-      <h1>MOVIES</h1>
+      <NavLink style={{ textDecoration: 'none' }} to="/">
+        <h1>MOVIES</h1>
+      </NavLink>
       <div className="nav-menu">
         <nav>
           <ul>
@@ -25,6 +28,10 @@ const Header = ({ setFilter }) => {
           <Input setFilter={setFilter} />
         </div>
       </div>
+      <button className="nav-toggle">
+        MENU
+        <RiMenu3Line />
+      </button>
     </header>
   );
 };
