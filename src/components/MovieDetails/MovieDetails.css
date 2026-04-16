@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 32px;
+  animation: show-left .4s forwards;
 }
 
 .movie-img {

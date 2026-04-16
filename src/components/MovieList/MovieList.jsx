@@ -15,9 +15,7 @@ const MovieList = ({ movies, setMovies }) => {
       } catch (error) {
         console.error('Erro ao carregar os filmes', error);
       } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1000);
+        setIsLoading(false);
       }
     };
     getMovie();

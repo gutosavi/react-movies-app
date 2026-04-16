@@ -17,6 +17,7 @@
 .nav-menu ul {
   display: flex;
   height: 100%;
+  padding: 15px;
   align-items: center;
   gap: 1rem;
   list-style: none;
@@ -42,7 +43,6 @@
 }
 
 h1 {
-  width: 200px;
   color: #eee;
   font-size: 2rem;
 }
@@ -51,9 +51,9 @@ h1 {
   display: none;
 }
 
-
 @media screen and (max-width: 768px) {
   h1 {
+    width: 80px;
     font-size: 1.5rem;
   }
 
@@ -64,7 +64,7 @@ h1 {
     background-color: #222;
     border: none;
     border-radius: 4px;
-    padding: .5rem 1rem;
+    padding: .5rem .5rem;
     text-transform: uppercase;
     font-weight: bold;
     color: #fff;
@@ -76,10 +76,15 @@ h1 {
 
   .nav-menu{
     justify-content: center;
+    padding-left: 15px;
   }
 
   .nav-menu ul {
-    /* display: none; */
+    display: none;
+  }
+
+  .nav-menu ul.active {
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
@@ -89,10 +94,21 @@ h1 {
     top: 0;
     right: 0;
     padding: 80px 25px 20px 0;
-   
     background-color: #222;
     border-radius: 4px;
     box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    animation: show-rigth .4s forwards;
   }
 
+}
+
+@keyframes show-rigth {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

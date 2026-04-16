@@ -5,6 +5,12 @@ import Input from '../Form/Input';
 import { RiMenu3Line } from 'react-icons/ri';
 
 const Header = ({ setFilter }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header className="nav-bar">
       <NavLink style={{ textDecoration: 'none' }} to="/">
@@ -12,7 +18,7 @@ const Header = ({ setFilter }) => {
       </NavLink>
       <div className="nav-menu">
         <nav>
-          <ul>
+          <ul className={isOpen ? 'active' : ''}>
             <NavLink className="nav-link" to="/">
               <li>Home</li>
             </NavLink>
@@ -28,7 +34,7 @@ const Header = ({ setFilter }) => {
           <Input setFilter={setFilter} />
         </div>
       </div>
-      <button className="nav-toggle">
+      <button className="nav-toggle" onClick={toggleMenu}>
         MENU
         <RiMenu3Line />
       </button>
