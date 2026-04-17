@@ -1,15 +1,17 @@
 import React from 'react';
+import { useFormContext } from 'react-hook-form';
 
-const Textarea = ({ ...register }) => {
+const Textarea = ({ name }) => {
+  const { register } = useFormContext();
+
   return (
     <>
       <textarea
-        name="text-area"
-        id="text-area"
+        // id="text-area"
         rows="10"
         cols="30"
         placeholder="Me fale um pouco sobre seu projeto"
-        {...register}
+        {...register(name)}
       ></textarea>
     </>
   );

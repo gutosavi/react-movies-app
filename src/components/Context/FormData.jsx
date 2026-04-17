@@ -5,34 +5,18 @@ import InputForm from '../Form/InputForm';
 import Textarea from '../Form/Textarea';
 
 const FormData = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const methods = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
   };
 
   return (
-    <FormProvider>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <InputForm
-          type="text"
-          placeholder="Nome completo"
-          {...register('name', { required: true })}
-        />
-        {errors.name && <span className="error-msg">Nome é obrigatório</span>}
-        <InputForm
-          type="mail"
-          placeholder="Endereço de e-mail"
-          {...register('email', { required: true })}
-        />
-        {errors.email && (
-          <span className="error-msg">E-mail é obrigatório</span>
-        )}
-        <Textarea {...register('message')} />
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <InputForm name="name" placeholder="Nome completo" />
+        <InputForm name="email" placeholder="Endereço de e-mail" />
+        <Textarea name="message" />
         <button className="btn-submit" type="submit">
           Enviar
         </button>
