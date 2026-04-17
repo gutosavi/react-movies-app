@@ -6,6 +6,7 @@ const InputForm = ({ name, placeholder }) => {
     register,
     formState: { errors },
   } = useFormContext();
+
   return (
     <>
       <input

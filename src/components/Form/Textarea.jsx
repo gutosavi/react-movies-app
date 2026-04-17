@@ -7,7 +7,6 @@ const Textarea = ({ name }) => {
   return (
     <>
       <textarea
-        // id="text-area"
         rows="10"
         cols="30"
         placeholder="Me fale um pouco sobre seu projeto"

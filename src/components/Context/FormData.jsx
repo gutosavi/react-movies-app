@@ -3,13 +3,26 @@ import './FormData.css';
 import { useForm, FormProvider } from 'react-hook-form';
 import InputForm from '../Form/InputForm';
 import Textarea from '../Form/Textarea';
+import { fetchPostApi } from '../../services/apiPost';
 
 const FormData = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
   const methods = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    try {
+      const dataForm = await fetchPostApi(data);
+      console.log('Dados enviados:', dataForm);
+      methods.reset();
+    } catch (error) {
+      console.error('Erro ao enviar dados', error);
+    } finally {
+      setIsLoading(false);
+    }
     console.log(data);
   };
+
+  if (isLoading) return <div>Enviando...</div>;
 
   return (
     <FormProvider {...methods}>
