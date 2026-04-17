@@ -1,9 +1,9 @@
 import React from 'react';
 
-const InputForm = ({ type, placeholder }) => {
+const InputForm = ({ type, placeholder, ...register }) => {
   return (
     <>
-      <input type={type} placeholder={placeholder} />
+      <input type={type} placeholder={placeholder} {...register} />
     </>
   );
 };

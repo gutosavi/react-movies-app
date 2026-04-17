@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Textarea = ({ value }) => {
+const Textarea = ({ ...register }) => {
   return (
     <>
       <textarea
@@ -9,7 +9,7 @@ const Textarea = ({ value }) => {
         rows="10"
         cols="30"
         placeholder="Me fale um pouco sobre seu projeto"
-        value={value}
+        {...register}
       ></textarea>
     </>
   );

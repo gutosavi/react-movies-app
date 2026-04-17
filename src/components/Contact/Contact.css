@@ -86,7 +86,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 }
 
 .form-container h2 {
@@ -99,6 +98,7 @@
 
 .form-container form textarea {
   width: 75%;
+  margin-top: 15px;
   border-radius: 5px;
   padding: 10px;
   color: #222;
@@ -106,10 +106,12 @@
 
 .form-container form input {
   width: 75%;
+  margin-top: 15px;
   padding: 10px;
   border: none;
   border-radius: 5px;
 }
+
 
 @media screen and (max-width: 900px) {
   .contact-grid {
