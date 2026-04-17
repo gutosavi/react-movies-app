@@ -2,7 +2,6 @@ import React from 'react';
 import './Contact.css';
 import { GiSpockHand } from 'react-icons/gi';
 import { CiMail } from 'react-icons/ci';
-import { IoIosRocket } from 'react-icons/io';
 
 const Contact = () => {
   return (
