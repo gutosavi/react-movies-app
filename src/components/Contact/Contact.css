@@ -1,0 +1,153 @@
+.contact-container {
+  height: calc(100vh - 75px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-grid {
+  display: grid;
+  height: 400px;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 30px;
+}
+
+
+.contact-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 5px;
+}
+
+.contact-sub-title {
+  font-weight: bold;
+  font-size: .875rem;
+  padding: 5px;
+  color: #ccc;
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 30px;
+}
+
+.send-email p {
+  font-size: .675rem;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.send-email span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.mail-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: #ccc;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+
+}
+
+.contact-box:first-child {
+  border-right: 2px solid #b8b8b8;
+  padding-right: 20px;
+  height: 100%;
+}
+
+.form-container form {
+  margin-top: -10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-container h2 {
+  width: 75%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #ccc;
+
+}
+
+.form-container form textarea {
+  width: 240px;
+  border-radius: 5px;
+  padding: 10px;
+  color: #222;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-container {
+    height: 100%;
+    margin-top: 30px;
+  }
+
+  .contact-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .contact-sub-title {
+    font-size: .575rem;
+  
+}
+
+  .send-email p {
+    font-size: .475rem;
+    
+  }
+
+  .send-email span {
+    font-size: .875rem;
+    
+  }
+
+  .mail-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+}
+
+  .contact-box:first-child {
+    border-right: 0;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form-container h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+
+}
