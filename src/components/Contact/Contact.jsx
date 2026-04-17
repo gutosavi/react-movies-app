@@ -2,8 +2,25 @@ import React from 'react';
 import './Contact.css';
 import { GiSpockHand } from 'react-icons/gi';
 import { CiMail } from 'react-icons/ci';
+import Textarea from '../Form/Textarea';
 
 const Contact = () => {
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [value, setValue] = React.useState();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    console.log(formData);
+  };
+
   return (
     <section className="contact-container">
       <div className="contact-grid">
@@ -28,16 +45,20 @@ const Contact = () => {
         </div>
         <div className="form-container">
           <h2>Contate-me:</h2>
-          <form>
-            <input type="text" placeholder="Nome completo" />
-            <input type="mail" placeholder="Endereço de e-mail" />
-            <textarea
-              name="text-area"
-              id="text-area"
-              rows="10"
-              cols="30"
-              placeholder="Me fale um pouco sobre seu projeto"
-            ></textarea>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="text"
+              placeholder="Nome completo"
+              value={formData.nome}
+              onChange={handleChange}
+            />
+            <input
+              type="mail"
+              placeholder="Endereço de e-mail"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <Textarea value={formData.message} onChange={handleChange} />
           </form>
         </div>
       </div>
