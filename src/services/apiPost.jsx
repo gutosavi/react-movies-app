@@ -1,7 +1,6 @@
 export const fetchPostApi = async (data) => {
   try {
-    const response = await ('https://typicode.com',
-    {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -14,7 +13,9 @@ export const fetchPostApi = async (data) => {
     }
     const result = await response.json();
     console.log('Dados enviados com sucesso', result);
+    return result;
   } catch (error) {
     console.error('Erro', error);
+    throw error;
   }
 };
