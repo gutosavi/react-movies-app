@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Contact from './components/Contact/Contact';
 import OnDisplay from './components/OnDisplay/OnDisplay';
-// import useDebounce from './hooks/useDebounce';
 
 function App() {
   const [movies, setMovies] = React.useState([]);
