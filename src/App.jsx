@@ -6,20 +6,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Contact from './components/Contact/Contact';
 import OnDisplay from './components/OnDisplay/OnDisplay';
-import useDebounce from './hooks/useDebounce';
+// import useDebounce from './hooks/useDebounce';
 
 function App() {
   const [movies, setMovies] = React.useState([]);
   const [inputValue, setInputValue] = React.useState('');
-  const [filterList, setFilterList] = React.useState(movies);
-  const debouncedSearchTerm = useDebounce(inputValue, 500);
-
-  React.useEffect(() => {
-    const resultado = movies.filter((movie) =>
-      movie.title?.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
-    );
-    setFilterList(resultado);
-  }, [debouncedSearchTerm, movies]);
 
   return (
     <>
@@ -28,7 +19,13 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<MovieList movies={filterList} setMovies={setMovies} />}
+            element={
+              <MovieList
+                inputValue={inputValue}
+                movies={movies}
+                setMovies={setMovies}
+              />
+            }
           />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/contact" element={<Contact />} />
