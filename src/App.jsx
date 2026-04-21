@@ -10,10 +10,21 @@ import OnDisplay from './components/OnDisplay/OnDisplay';
 function App() {
   const [movies, setMovies] = React.useState([]);
   const [inputValue, setInputValue] = React.useState('');
+  const [filterList, setFilterList] = React.useState(movies);
 
-  const filterMovie = movies.filter((movie) =>
-    movie.title?.toLowerCase().includes(inputValue.toLowerCase()),
-  );
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      const resultado = movies.filter((movie) =>
+        movie.title?.toLowerCase().includes(inputValue.toLowerCase()),
+      );
+      setFilterList(resultado);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [inputValue, movies]);
+
+  // const filterMovie = movies.filter((movie) =>
+  //   movie.title?.toLowerCase().includes(inputValue.toLowerCase()),
+  // );
 
   return (
     <>
@@ -22,7 +33,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<MovieList movies={filterMovie} setMovies={setMovies} />}
+            element={<MovieList movies={filterList} setMovies={setMovies} />}
           />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/contact" element={<Contact />} />
