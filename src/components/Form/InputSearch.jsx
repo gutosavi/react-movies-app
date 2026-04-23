@@ -1,8 +1,8 @@
 import React from 'react';
-import './Input.css';
+import './InputSearch.css';
 import { CiSearch } from 'react-icons/ci';
 
-const Input = ({ setFilter }) => {
+const InputSearch = ({ setFilter }) => {
   const inputRef = React.useRef(null);
 
   const handleChange = (e) => {
@@ -34,4 +34,4 @@ const Input = ({ setFilter }) => {
   );
 };
 
-export default Input;
+export default InputSearch;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { NavLink } from 'react-router-dom';
-import Input from '../Form/Input';
+import InputSearch from '../Form/InputSearch';
 import { RiMenu3Line } from 'react-icons/ri';
 
 const Header = ({ setFilter }) => {
@@ -47,7 +47,7 @@ const Header = ({ setFilter }) => {
           </ul>
         </nav>
         <div className="nav-input">
-          <Input setFilter={setFilter} />
+          <InputSearch setFilter={setFilter} />
         </div>
       </div>
       <button className="nav-toggle" onClick={toggleMenu}>

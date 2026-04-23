@@ -1,7 +1,8 @@
 import React from 'react';
 import './FormData.css';
 import { useForm, FormProvider } from 'react-hook-form';
-import InputForm from '../Form/InputForm';
+import InputName from '../Form/InputName';
+import InputMail from '../Form/InputMail';
 import Textarea from '../Form/Textarea';
 import { fetchPostApi } from '../../services/apiPost';
 import { OrbitProgress } from 'react-loading-indicators';
@@ -33,8 +34,8 @@ const FormData = () => {
       ) : (
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
-            <InputForm name="name" placeholder="Nome completo" />
-            <InputForm name="email" placeholder="Endereço de e-mail" />
+            <InputName name="name" placeholder="Nome completo" />
+            <InputMail name="email" placeholder="Endereço de e-mail" />
             <Textarea name="message" />
             <button className="btn-submit" type="submit">
               Enviar

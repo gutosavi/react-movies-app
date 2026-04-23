@@ -7,7 +7,7 @@ import useDebounce from '../../hooks/useDebounce';
 
 const MovieList = ({ inputValue, movies, setMovies }) => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [filterList, setFilterList] = React.useState(movies);
+  const [filterList, setFilterList] = React.useState([]);
   const debouncedSearchTerm = useDebounce(inputValue, 500);
 
   React.useEffect(() => {

@@ -1,8 +1,9 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import MovieList from './components/MovieList/MovieList';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Contact from './components/Contact/Contact';
 import OnDisplay from './components/OnDisplay/OnDisplay';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/ondisplay" element={<OnDisplay />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
