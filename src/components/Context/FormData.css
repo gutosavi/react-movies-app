@@ -29,8 +29,9 @@
 }
 
 .form-loading {
-  height: 70%;
+  height: 75%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; 
+  padding-top: 20px;
 }

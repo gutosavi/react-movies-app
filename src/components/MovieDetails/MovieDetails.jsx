@@ -2,7 +2,7 @@ import React from 'react';
 import './MovieDetails.css';
 import { useParams, useLocation } from 'react-router-dom';
 import MovieAverage from '../MovieAverage/MovieAverage';
-import { fetchMovieById } from '../../services/api';
+import { fetchMovieById } from '../../services/apiGet';
 import { OrbitProgress } from 'react-loading-indicators';
 
 const MovieDetails = () => {

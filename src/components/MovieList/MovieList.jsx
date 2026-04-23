@@ -2,7 +2,7 @@ import React from 'react';
 import './MovieList.css';
 import MovieCard from '../MovieCard/MovieCard';
 import { OrbitProgress } from 'react-loading-indicators';
-import { fetchMovies } from '../../services/api';
+import { fetchMovies } from '../../services/apiGet';
 import useDebounce from '../../hooks/useDebounce';
 
 const MovieList = ({ inputValue, movies, setMovies }) => {

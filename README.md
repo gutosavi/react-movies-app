@@ -8,6 +8,7 @@
 - Debounce de busca
 - Interface responsiva e pensada na experiência do usuário;
 - Loading
+- Skeleton loading
 - Tratamento de erros;
 - useParams
 - useLocation

@@ -89,10 +89,11 @@
 }
 
 .form-container h2 {
-  width: 60%;
+  width: 100%;
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 3.25rem;
   color: #ccc;
 }
 

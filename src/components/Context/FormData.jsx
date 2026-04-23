@@ -5,6 +5,7 @@ import Input from '../Form/Input';
 import Textarea from '../Form/Textarea';
 import { fetchPostApi } from '../../services/apiPost';
 import { OrbitProgress } from 'react-loading-indicators';
+import ComponentSkeleton from '../Skeleton/ComponentSkeleton';
 
 const FormData = () => {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -27,9 +28,9 @@ const FormData = () => {
   return (
     <>
       {isLoading ? (
-        <p className="form-loading">
-          <OrbitProgress size="small" color="#ccc" />
-        </p>
+        <div className="form-loading">
+          <ComponentSkeleton />
+        </div>
       ) : (
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
