@@ -1,8 +1,7 @@
 import React from 'react';
 import './FormData.css';
 import { useForm, FormProvider } from 'react-hook-form';
-import InputName from '../Form/InputName';
-import InputMail from '../Form/InputMail';
+import Input from '../Form/Input';
 import Textarea from '../Form/Textarea';
 import { fetchPostApi } from '../../services/apiPost';
 import { OrbitProgress } from 'react-loading-indicators';
@@ -34,8 +33,28 @@ const FormData = () => {
       ) : (
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
-            <InputName name="name" placeholder="Nome completo" />
-            <InputMail name="email" placeholder="Endereço de e-mail" />
+            <Input
+              name="name"
+              placeholder="Nome completo"
+              validation={{
+                required: 'Nome é obrigatório',
+                pattern: {
+                  value: /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/,
+                  message: 'Nome é inválido',
+                },
+              }}
+            />
+            <Input
+              name="email"
+              placeholder="Endereço de e-mail"
+              validation={{
+                required: 'E-mail é obrigatório',
+                pattern: {
+                  value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
+                  message: 'E-mail inválido',
+                },
+              }}
+            />
             <Textarea name="message" />
             <button className="btn-submit" type="submit">
               Enviar
