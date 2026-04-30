@@ -5,13 +5,13 @@
 - Consumo de API de filmes;
 - Rotas de navegação;
 - Busca ativa por filmes;
-- Debounce de busca
+- Debounce de busca;
 - Interface responsiva e pensada na experiência do usuário;
-- Loading
-- Skeleton loading
+- Loading;
+- Skeleton loading;
 - Tratamento de erros;
-- useParams
-- useLocation
-- Dropdown menu
-- Componentização
-- Custom hooks
+- useParams;
+- useLocation;
+- Dropdown menu;
+- Componentização;
+- Custom hooks;

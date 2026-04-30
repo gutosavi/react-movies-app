@@ -2,14 +2,14 @@
   box-sizing: border-box;
 }
 
-.contact-container {
+.contactContainer {
   height: calc(100vh - 75px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.contact-grid {
+.contactGrid {
   display: grid;
   min-height: 400px;
   grid-template-columns: 1fr 1fr;
@@ -18,7 +18,7 @@
 }
 
 
-.contact-box {
+.contactBox {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,39 +26,39 @@
   align-items: center;
 }
 
-.contact-title {
+.contactTitle {
   font-weight: bold;
   font-size: 2rem;
   padding: 5px;
 }
 
-.contact-sub-title {
+.contactSubTitle {
   font-weight: bold;
   font-size: .875rem;
   padding: 5px;
   color: #ccc;
 }
 
-.contact-email {
+.contactEmail {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 30px;
 }
 
-.send-email p {
+.sendEmail p {
   font-size: .675rem;
   color: #ccc;
   font-weight: bold;
 }
 
-.send-email span {
+.sendEmail span {
   font-size: 1.2rem;
   font-weight: bold;
   color: #111;
 }
 
-.mail-icon {
+.mailIcon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,13 +72,13 @@
 
 }
 
-.contact-box:first-child {
+.contactBox:first-child {
   border-right: 2px solid #b8b8b8;
   padding-right: 20px;
   height: 100%;
 }
 
-.form-container form {
+.formContainer form {
   margin-top: -10px;
   width: 100%;
   height: 100%;
@@ -88,7 +88,7 @@
   align-items: center;
 }
 
-.form-container h2 {
+.formContainer h2 {
   width: 100%;
   margin-top: 20px;
   display: flex;
@@ -97,7 +97,7 @@
   color: #ccc;
 }
 
-.form-container form textarea {
+.formContainer form textarea {
   width: 75%;
   margin-top: 15px;
   outline: none;
@@ -106,7 +106,7 @@
   color: #222;
 }
 
-.form-container form input {
+.formContainer form input {
   width: 75%;
   margin-top: 15px;
   padding: 10px;
@@ -116,50 +116,49 @@
 
 
 @media screen and (max-width: 900px) {
-  .contact-grid {
+  .contactGrid {
     margin: 15px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .contact-container {
+  .contactContainer {
     height: 100%;
     margin-top: 30px;
   }
 
-  .contact-grid {
+  .contactGrid {
     width: 100%;
     grid-template-columns: 1fr;
     margin: 0;
   }
 
-  .contact-sub-title {
+  .contactSubTitle {
     font-size: .575rem;
   }
 
-  .send-email p {
+  .sendEmail p {
     font-size: .475rem;
   }
 
-  .send-email span {
+  .sendEmail span {
     font-size: .875rem;
   }
 
-  .mail-icon {
+  .mailIcon {
   width: 30px;
   height: 30px;
   font-size: 1rem;  
   }
 
-  .contact-box:first-child {
+  .contactBox:first-child {
     border-right: 0;
   }
 
-  .form-container {
+  .formContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
-
 }
