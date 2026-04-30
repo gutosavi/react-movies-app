@@ -4,7 +4,6 @@ import { GiSpockHand } from 'react-icons/gi';
 import { CiMail } from 'react-icons/ci';
 import Textarea from '../Form/Textarea';
 import FormData from '../Context/FormData';
-console.log('Teste:', styles);
 
 const Contact = () => {
   return (
