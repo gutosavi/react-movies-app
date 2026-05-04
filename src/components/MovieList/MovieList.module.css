@@ -1,4 +1,4 @@
-.movie-list {
+.movieList {
   display: flex;
   justify-content: start;
   align-items: start;
@@ -11,7 +11,7 @@
   animation: show-left .4s forwards;
 }
 
-.movie-loading {
+.movieLoading {
   display: flex;
   justify-content: center;
   align-items: center;

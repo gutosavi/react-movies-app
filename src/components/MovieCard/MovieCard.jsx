@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import MovieAverage from '../MovieAverage/MovieAverage';
 
 const MovieCard = ({ movies }) => {
+  if (!movies) return null;
   return (
     <>
       <ul className="movie-container">

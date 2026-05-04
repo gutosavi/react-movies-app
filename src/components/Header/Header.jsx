@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import styles from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 import InputSearch from '../Form/InputSearch';
 import { RiMenu3Line } from 'react-icons/ri';
@@ -9,11 +9,8 @@ const Header = ({ setFilter }) => {
   const menuRef = React.useRef(null);
   const buttonRef = React.useRef(null);
 
-  console.log('Eu sou o primeiro:', isOpen);
-
   const toggleMenu = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
-    console.log(isOpen);
   };
 
   React.useEffect(() => {
@@ -35,29 +32,35 @@ const Header = ({ setFilter }) => {
   }, []);
 
   return (
-    <header className="nav-bar">
+    <header className={styles.navbar}>
       <NavLink style={{ textDecoration: 'none' }} to="/">
         <h1>MOVIES</h1>
       </NavLink>
-      <div className="nav-menu">
+      <div className={styles.navmenu}>
         <nav ref={menuRef}>
-          <ul className={isOpen ? 'active' : ''}>
-            <NavLink className="nav-link" to="/">
-              <li>Home</li>
-            </NavLink>
-            <NavLink className="nav-link" to="/in-theaters">
-              <li>On Display</li>
-            </NavLink>
-            <NavLink className="nav-link" to="/contact">
-              <li>Contact</li>
-            </NavLink>
+          <ul className={`${styles.menu} ${isOpen ? styles.active : ''}`}>
+            <li>
+              <NavLink className={styles.navlink} to="/">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navlink} to="/in-theaters">
+                On Display
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navlink} to="/contact">
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </nav>
-        <div className="nav-input">
+        <div className={styles.navinput}>
           <InputSearch setFilter={setFilter} />
         </div>
       </div>
-      <button ref={buttonRef} className="nav-toggle" onClick={toggleMenu}>
+      <button ref={buttonRef} className={styles.navtoggle} onClick={toggleMenu}>
         MENU
         <RiMenu3Line />
       </button>

@@ -1,4 +1,4 @@
-.nav-bar {
+.navbar {
   background-color: #222;
   height: 75px;
   padding: 1rem;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.nav-menu {
+.navmenu {
   width: 100%;
   height: 100%;
   display: flex;
@@ -14,7 +14,7 @@
   margin: 0 10px;
 }
 
-.nav-menu ul {
+.navmenu ul {
   display: flex;
   height: 100%;
   padding: 15px;
@@ -23,11 +23,7 @@
   list-style: none;
 }
 
-.nav-link {
-  text-decoration: none;
-}
-
-.nav-menu ul li {
+.navlink {
   text-decoration: none;
   color: #eee;
   font-size: .875rem;
@@ -35,7 +31,7 @@
   font-weight: bold;
 }
 
-.nav-input {
+.navinput {
   display: flex;
   height: 100%;
   align-items: center;
@@ -47,7 +43,7 @@ h1 {
   font-size: 2rem;
 }
 
-.nav-toggle {
+.navtoggle {
   display: none;
 }
 
@@ -57,7 +53,7 @@ h1 {
     font-size: 1.5rem;
   }
 
-  .nav-toggle {
+  .navtoggle {
     display: flex;
     gap: .5rem;
     align-items: center;
@@ -74,16 +70,16 @@ h1 {
     z-index: 300;
   }
 
-  .nav-menu{
+  .navmenu{
     justify-content: center;
     padding-left: 15px;
   }
 
-  .nav-menu ul {
+  .navmenu ul {
     display: none;
   }
 
-  .nav-menu ul.active {
+  .navmenu ul.active {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
