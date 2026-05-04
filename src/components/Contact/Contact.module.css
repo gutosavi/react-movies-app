@@ -3,7 +3,7 @@
 }
 
 .contactContainer {
-  height: calc(100vh - 75px);
+  height: calc(100vh - 9.675rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,7 +124,7 @@
 @media screen and (max-width: 600px) {
   .contactContainer {
     height: 100%;
-    margin-top: 30px;
+    margin: 30px 0;
   }
 
   .contactGrid {
