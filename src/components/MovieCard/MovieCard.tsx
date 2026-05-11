@@ -1,0 +1,44 @@
+import React from 'react';
+import './MovieCard.css';
+import { Link } from 'react-router-dom';
+import MovieAverage from '../MovieAverage/MovieAverage';
+import { Movie } from '../../types';
+
+type MovieCardProps = {
+  movie: Array<Movie>;
+}
+
+const MovieCard = ({ movie }: MovieCardProps) => {
+  if (!movie) return null;
+  return (
+    <>
+      <ul className="movie-container">
+        {movie &&
+          movie.map((movie) => (
+            <li key={movie.id}>
+              <Link to={`/movie/${movie.id}`} state={{ movie: movie }}>
+                <section className="movie-card">
+                  <div className="movie-poster">
+                    <img
+                      src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                    />
+                  </div>
+                  <div className="movie-info">
+                    <p className="movie-title">{movie.title}</p>
+                    <p>
+                      <MovieAverage rating={movie.vote_average} />
+                    </p>
+                    <div className="hidden-content">
+                      <p className="description">{movie.overview}</p>
+                    </div>
+                  </div>
+                </section>
+              </Link>
+            </li>
+          ))}
+      </ul>
+    </>
+  );
+};
+
+export default MovieCard;
