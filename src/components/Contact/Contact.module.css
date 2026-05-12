@@ -3,7 +3,7 @@
 }
 
 .contactContainer {
-  height: calc(100vh - 9.675rem);
+  min-height: calc(100vh - 9.675rem);
   display: flex;
   justify-content: center;
   align-items: center;

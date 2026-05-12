@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Contact.module.css';
 import { GiSpockHand } from 'react-icons/gi';
 import { CiMail } from 'react-icons/ci';
-import Textarea from '../Form/Textarea';
 import FormData from '../Context/FormData';
 
 const Contact = () => {

@@ -1,6 +1,6 @@
 import { UserResponse } from "../types";
 
-export const fetchPostApi = async (data: UserResponse): Promise<UserResponse | null> => {
+export const fetchPostApi = async (data: UserResponse): Promise<UserResponse | undefined> => {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',

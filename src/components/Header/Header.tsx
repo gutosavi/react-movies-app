@@ -3,24 +3,29 @@ import styles from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 import InputSearch from '../Form/InputSearch';
 import { RiMenu3Line } from 'react-icons/ri';
+import { isFilter } from '../../types';
 
-const Header = ({ setFilter }) => {
+const Header = ({ setFilter }: isFilter) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const menuRef = React.useRef(null);
-  const buttonRef = React.useRef(null);
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
   React.useEffect(() => {
-    const handleClickOutside = (e) => {
-      const clickedMenu = menuRef.current?.contains(e.target);
-      const clickedButton = buttonRef.current?.contains(e.target);
-
-      if (!clickedMenu && !clickedButton) {
-        setIsOpen(false);
-      }
+    const handleClickOutside = (event: Event) => {
+      const target = event.target;
+      
+      if (target instanceof HTMLElement){
+        const clickedMenu = menuRef.current?.contains(target);
+        const clickedButton = buttonRef.current?.contains(target);
+  
+        if (!clickedMenu && !clickedButton) {
+          setIsOpen(false);
+        }
+      }    
     };
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside);

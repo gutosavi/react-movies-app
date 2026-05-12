@@ -1,10 +1,10 @@
 import React from 'react';
-import './FormData.css';
+import styles from './FormData.module.css';
 import { useForm, FormProvider } from 'react-hook-form';
 import { UserResponse } from '../../types.ts';
-import Input from '../Form/Input.tsx';
-import Textarea from '../Form/Textarea.tsx';
 import { fetchPostApi } from '../../services/apiPost';
+import Input from '../Form/Input';
+import Textarea from '../Form/Textarea';
 import ComponentSkeleton from '../Skeleton/ComponentSkeleton';
 
 const FormData = () => {
@@ -27,7 +27,7 @@ const FormData = () => {
   return (
     <>
       {isLoading ? (
-        <div className="form-loading">
+        <div className={styles.formLoading}>
           <ComponentSkeleton />
         </div>
       ) : (
@@ -56,7 +56,7 @@ const FormData = () => {
               }}
             />
             <Textarea name="message" />
-            <button className="btn-submit" type="submit">
+            <button className={styles.btnSubmit} type="submit">
               Enviar
             </button>
           </form>

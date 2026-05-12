@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieDetails.css';
+import styles from './MovieDetails.module.css';
 import { useParams, useLocation } from 'react-router-dom';
 import MovieAverage from '../MovieAverage/MovieAverage';
 import { fetchMovieById } from '../../services/apiGet';
@@ -36,26 +36,26 @@ const MovieDetails = () => {
   return (
     <>
       {isLoading || !movie ? (
-        <div className="movie-loading">
+        <div className={styles.movieLoading}>
           <OrbitProgress color="#fff" size="medium" />
         </div>
       ) : (
-        <div className="movie-details">
-          <div className="movie-img">
+        <div className={styles.movieDetails}>
+          <div className={styles.movieImg}>
             <img
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               alt={movie.title}
             />
           </div>
-          <div className="info-movie">
+          <div className={styles.infoMovie}>
             <h2>{movie.title}</h2>
             <p>
               <MovieAverage
-                className="movie-average"
+                className={styles.movieAverage}
                 rating={movie.vote_average}
               />
             </p>
-            <p className="movie-description">{movie.overview}</p>
+            <p className={styles.movieDescription}>{movie.overview}</p>
           </div>
         </div>
       )}

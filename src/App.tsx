@@ -1,15 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header/Header';
+import Header from './components/Header/Header.tsx';
 import Footer from './components/Footer/Footer';
 import MovieList from './components/MovieList/MovieList';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Contact from './components/Contact/Contact';
 import OnDisplay from './components/OnDisplay/OnDisplay';
+import { Movie } from './types.ts';
 
 function App() {
-  const [movies, setMovies] = React.useState([]);
+  const [movie, setMovie] = React.useState<Movie[]>([]);
   const [inputValue, setInputValue] = React.useState('');
 
   return (
@@ -22,8 +23,8 @@ function App() {
             element={
               <MovieList
                 inputValue={inputValue}
-                movies={movies}
-                setMovies={setMovies}
+                movie={movie}
+                setMovie={setMovie}
               />
             }
           />

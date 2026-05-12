@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieCard.css';
+import styles from './MovieCard.module.css'
 import { Link } from 'react-router-dom';
 import MovieAverage from '../MovieAverage/MovieAverage';
 import { Movie } from '../../types';
@@ -12,24 +12,24 @@ const MovieCard = ({ movie }: MovieCardProps) => {
   if (!movie) return null;
   return (
     <>
-      <ul className="movie-container">
+      <ul className={styles.movieContainer}>
         {movie &&
           movie.map((movie) => (
             <li key={movie.id}>
               <Link to={`/movie/${movie.id}`} state={{ movie: movie }}>
-                <section className="movie-card">
-                  <div className="movie-poster">
+                <section className={styles.movieCard}>
+                  <div className={styles.moviePoster}>
                     <img
                       src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                     />
                   </div>
-                  <div className="movie-info">
-                    <p className="movie-title">{movie.title}</p>
+                  <div className={styles.movieInfo}>
+                    <p className={styles.movieTitle}>{movie.title}</p>
                     <p>
                       <MovieAverage rating={movie.vote_average} />
                     </p>
-                    <div className="hidden-content">
-                      <p className="description">{movie.overview}</p>
+                    <div className={styles.hiddenContent}>
+                      <p className={styles.description}>{movie.overview}</p>
                     </div>
                   </div>
                 </section>
