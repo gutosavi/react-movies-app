@@ -16,7 +16,7 @@ O projeto consome uma API externa de filmes e implementa funcionalidades moderna
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Consumo de API de filmes
 - Busca dinâmica de filmes

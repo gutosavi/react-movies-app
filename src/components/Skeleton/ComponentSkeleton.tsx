@@ -1,11 +1,12 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import '../../App.css';
+import styles from './ComponentSkeleton.module.css';
 
 const ComponentSkeleton = () => {
   return (
-    <div className="skeleton-container">
-      <div className="skeleton-box">
+    <div className={styles.skeletonContainer}>
+      <div className={styles.skeletonBox}>
         <div>
           <Skeleton
             style={{ marginBottom: '10px' }}
@@ -25,8 +26,8 @@ const ComponentSkeleton = () => {
       </div>
       <div>
         <Skeleton
-          width={250}
-          height={120}
+          width={260}
+          height={150}
           baseColor="#3c3c3c"
           highlightColor="#474747"
         />

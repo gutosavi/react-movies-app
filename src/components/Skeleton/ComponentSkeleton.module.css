@@ -1,13 +1,13 @@
 
-.skeleton-container {
+.skeletonContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
+  width: 75%;
   max-width: 50rem;
 }
 
-.skeleton-box {
+.skeletonBox {
   display: flex;
   flex-direction: column;
   gap: 10px;
