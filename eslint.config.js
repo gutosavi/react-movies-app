@@ -9,7 +9,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 export default defineConfig([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{ts,tsx}'],
     extends: [
       js.configs.recommended,
       reactHooks.configs.flat.recommended,

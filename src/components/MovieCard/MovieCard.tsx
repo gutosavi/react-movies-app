@@ -2,11 +2,7 @@ import React from 'react';
 import styles from './MovieCard.module.css'
 import { Link } from 'react-router-dom';
 import MovieAverage from '../MovieAverage/MovieAverage';
-import { Movie } from '../../types';
-
-type MovieCardProps = {
-  movie: Array<Movie>;
-}
+import { MovieCardProps } from '../../types';
 
 const MovieCard = ({ movie }: MovieCardProps) => {
   if (!movie) return null;

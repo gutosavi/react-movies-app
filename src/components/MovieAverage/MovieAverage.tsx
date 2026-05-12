@@ -1,14 +1,9 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { FaRegStar } from 'react-icons/fa';
-import { Movie } from '../../types'
+import { RatingProp } from '../../types';
 
-type RatingProp = {
-  rating: Movie['vote_average'];
-  className?: string;
-}
-
-const MovieAverage = ({ rating, className }: RatingProp) => {
+const MovieAverage = ({ rating }: RatingProp) => {
   return (
     <>
       {[...Array(5)].map((_, index) => {

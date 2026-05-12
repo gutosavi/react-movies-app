@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface Movie {
   id: number;
   title: string;
@@ -17,6 +19,42 @@ export interface UserResponse {
   email: string;
   message: string;
   id: number;
+}
+
+export type MovieCardProps = {
+  movie: Array<Movie>;
+}
+
+export type RatingProp = {
+  rating: Movie['vote_average'];
+  className?: string;
+}
+
+export interface MovieProps {
+  movie: Movie[];
+  setMovie: Dispatch<SetStateAction<Movie[]>>;
+  inputValue: string;
+}
+
+export type CustomHeaders = Record<string, string> & {
+  Accept: string;
+  Authorization: string;
+}
+
+export interface isFilter {
+  setFilter: (filter: string) => void;
+}
+
+export interface InputTypes {
+  name: string;
+  placeholder: string;
+  validation: {
+    required: string;
+    pattern: {
+      value: RegExp;
+      message: string;
+    }
+  }
 }
 
 export function isMovieResponse (data: unknown): data is MovieResponse {
@@ -47,23 +85,3 @@ export function isMovie(data: unknown): data is Movie {
   );
 }
 
-export type CustomHeaders = Record<string, string> & {
-  Accept: string;
-  Authorization: string;
-}
-
-export interface isFilter {
-  setFilter: (filter: string) => void;
-}
-
-export interface InputTypes {
-  name: string;
-  placeholder: string;
-  validation: {
-    required: string;
-    pattern: {
-      value: RegExp;
-      message: string;
-    }
-  }
-}

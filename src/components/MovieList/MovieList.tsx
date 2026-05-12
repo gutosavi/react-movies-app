@@ -1,17 +1,10 @@
 import React from 'react';
-import { Dispatch, SetStateAction } from 'react';
 import styles from './MovieList.module.css';
 import MovieCard from '../MovieCard/MovieCard';
 import { OrbitProgress } from 'react-loading-indicators';
 import { fetchMovies } from '../../services/apiGet';
 import useDebounce from '../../hooks/useDebounce';
-import { Movie } from '../../types';
-
-interface MovieProps {
-  movie: Movie[];
-  setMovie: Dispatch<SetStateAction<Movie[]>>;
-  inputValue: string;
-}
+import { Movie, MovieProps } from '../../types';
 
 const MovieList = ({ inputValue, movie, setMovie }: MovieProps) => {
   const [isLoading, setIsLoading] = React.useState(false);

@@ -6,7 +6,7 @@ import { RiMenu3Line } from 'react-icons/ri';
 import { isFilter } from '../../types';
 
 const Header = ({ setFilter }: isFilter) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
