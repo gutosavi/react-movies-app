@@ -22,7 +22,7 @@ const InputSearch = ({ setFilter }: isFilter) => {
 
   return (
     <>
-      <div className="input-icon">
+      <div className='input-icon'>
         <CiSearch style={{ color: '#ccc', fontSize: '1.3rem' }} />
       </div>
       <form onSubmit={(e) => e.preventDefault()}>

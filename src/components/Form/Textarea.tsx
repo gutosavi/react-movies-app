@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-const Textarea = ({ name }) => {
+const Textarea = ({ name }: { name: string}) => {
   const {
     register,
     watch,
@@ -15,8 +15,8 @@ const Textarea = ({ name }) => {
     <>
       <textarea
         id={name}
-        rows="10"
-        cols="30"
+        rows={10}
+        cols={30}
         placeholder="Me fale um pouco sobre seu projeto"
         maxLength={maxChar}
         {...register(name, {
@@ -37,7 +37,7 @@ const Textarea = ({ name }) => {
         {charCount} / {maxChar}
       </div>
       {errors[name] && (
-        <span className="error-msg">{errors[name].message}</span>
+        <span className="error-msg">{errors[name]?.message?.toString()}</span>
       )}
     </>
   );

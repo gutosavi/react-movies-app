@@ -1,7 +1,8 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
+import { InputTypes } from '../../types';
 
-const Input = ({ name, placeholder, validation }) => {
+const Input = ({ name, placeholder, validation }: InputTypes) => {
   const {
     register,
     formState: { errors },
@@ -11,7 +12,7 @@ const Input = ({ name, placeholder, validation }) => {
     <>
       <input placeholder={placeholder} {...register(name, validation)} />
       {errors[name] && (
-        <span className="error-msg">{errors[name].message}</span>
+        <span className="error-msg">{errors[name]?.message?.toString()}</span>
       )}
     </>
   );
