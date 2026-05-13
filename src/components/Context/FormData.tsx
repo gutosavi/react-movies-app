@@ -8,7 +8,7 @@ import Textarea from '../Form/Textarea';
 import ComponentSkeleton from '../Skeleton/ComponentSkeleton';
 
 const FormData = () => {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const methods = useForm<UserResponse>();
 
   const onSubmit = async (data: UserResponse): Promise<UserResponse | undefined> => {
