@@ -67,6 +67,10 @@ const MovieList = ({ inputValue, movie, setMovie }: MovieProps) => {
       ) : (
         <section className={styles.movieList}>
           <MovieCard movie={filterList} />
+          <div className={styles.buttonContainer}>
+            <button className={styles.movieButton}>Anterior</button>
+            <button className={styles.movieButton}>Próximo</button>
+          </div>
         </section>
       )}
     </>
