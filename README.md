@@ -9,7 +9,7 @@ O projeto consome a API pública do TMDB (The Movie Database) e implementa funci
 ## 📸 Demonstração
 
 <p align="center">
-  <img width="933" height="916" alt="" src="" />
+  <img width="933" height="916" alt="Animação da aplicação" src="/src/assets/movies-app-animation.gif" />
 </p>
 
 ---
